@@ -116,23 +116,3 @@ class Channel:
         if not isinstance(other, Channel):
             raise ValueError("Должен использоваться объект класса Channel для выполнения операции '=='")
         return self.subscriber_count == other.subscriber_count
-
-
-if __name__ == '__main__':
-    moscowpython = Channel('UC-OVMPlMA3-YCIeg4z5z23A')
-    highload = Channel('UCwHL6WHUarjGfUM_586me8w')
-
-    print(moscowpython)  # Выводит название канала и его ссылку
-    # (https://www.youtube.com/channel/UC-OVMPlMA3-YCIeg4z5z23A)'
-    print(moscowpython + highload)  # Выводит сумму количества подписчиков двух каналов
-    print(moscowpython - highload)  # Выводит разницу количеств подписчеков между двумя каналами
-    print(highload - moscowpython)  # Выводит разницу количества подписчиков между двумя каналами (обратный порядок)
-    print(moscowpython > highload)  # Выводит false, если у канала MoscowPython больше подписчиков,
-    # чем у канала highload
-    print(moscowpython >= highload)  # Выводит False, если у канала MoscowPython больше или равно количество подписчиков
-    # у канала highload
-    print(moscowpython < highload)
-    print(moscowpython <= highload)  # Выводит True, если у канала MoscowPython меньше или равно количество подписчиков
-    # у канала highload
-    print(moscowpython == highload)  # Выводит False, если у канала MoscowPython количество подписчиков равно количеству
-    # подписчиков у канала highload-
