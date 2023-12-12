@@ -10,6 +10,7 @@ class Video:
         self.view_count = None
         self.like_count = None
         self.get_video_info(video_id)
+        self.url = None
 
     def __str__(self):
         return self.title or "No Title"
@@ -27,6 +28,7 @@ class Video:
             if 'items' in video_response and video_response['items']:
                 video_info = video_response['items'][0]
                 self.title = video_info['snippet']['title']
+                self.url: str = 'https://www.youtube.com/watch?v=' + video_info['id']
                 self.view_count = int(video_info['statistics']['viewCount'])
                 self.like_count = int(video_info['statistics']['likeCount'])
             else:
